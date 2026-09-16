@@ -20,6 +20,21 @@ proxies:
   server: 43.203.241.196
   type: ss
   udp: true
+- cipher: chacha20-ietf-poly1305
+  name: SS - raw.githubusercontent.com1
+  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
+  port: 6666
+  server: 54.199.8.75
+  type: ss
+  udp: true
+- name: Trojan - raw.githubusercontent.com
+  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
+  port: 6668
+  server: 54.199.8.75
+  servername: baidu.com#end-gfw.com
+  skip-cert-verify: false
+  type: trojan
+  udp: false
 - alterId: 0
   cipher: auto
   name: end-gfw.com - raw.githubusercontent.com
@@ -36,25 +51,10 @@ proxies:
     headers:
       Host: end-gfw.com
     path: /
-- cipher: chacha20-ietf-poly1305
-  name: SS - raw.githubusercontent.com1
-  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
-  port: 6666
-  server: 54.199.8.75
-  type: ss
-  udp: true
-- name: Trojan - raw.githubusercontent.com
-  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
-  port: 6668
-  server: 43.203.241.196
-  servername: baidu.com#end-gfw.com
-  skip-cert-verify: false
-  type: trojan
-  udp: false
 - name: Trojan - raw.githubusercontent.com1
   password: 0b4bee77-b37c-42ea-b01e-572aa3422195
   port: 6668
-  server: 54.199.8.75
+  server: 43.203.241.196
   servername: baidu.com#end-gfw.com
   skip-cert-verify: false
   type: trojan
@@ -90,17 +90,16 @@ proxies:
     path: /github.com/Alvin9999-newpac/fanqiang
 - name: VLESS - FreeProxyGo
   network: ws
-  port: 2053
-  server: 104.17.162.157
-  servername: feixiang1981.ccwu.cc
+  port: 8880
+  server: 50.62.198.30
   skip-cert-verify: true
-  tls: true
+  tls: false
   type: vless
   udp: false
-  uuid: 06fb2cc5-a777-4371-8a1d-c10205b4c85e
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   ws-opts:
     headers:
-      Host: feixiang1981.ccwu.cc
+      Host: vms.lifetime39.workers.dev
 - alpn:
   - h2
   http-opts:
@@ -119,32 +118,39 @@ proxies:
   type: vless
   udp: false
   uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
-- name: VLESS - FreeProxyGo3
+- alterId: 0
+  cipher: auto
+  name: 🇳🇱荷兰 - FreeProxyGo
   network: ws
+  port: 80
+  server: d3cdy6viklzpq1.cloudfront.net
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 4da05f36-7918-488e-b07e-808e4992cee0
+  ws-opts:
+    headers:
+      Host: d3cdy6viklzpq1.cloudfront.net
+    path: /vmess
+- alpn:
+  - h2
+  http-opts:
+    headers:
+      Host: dey.lnmarketplace.net
+    method: GET
+    path:
+    - /kavir
+  name: VLESS - FreeProxyGo4
+  network: http
   port: 443
-  server: 104.19.49.155
-  servername: fq.jp188.dpdns.org
+  server: '[2a14:3f87:f001:46::a]'
+  servername: dey.lnmarketplace.net
   skip-cert-verify: true
   tls: true
   type: vless
   udp: false
-  uuid: 42c62a5a-cd31-4551-80ef-908732370287
-  ws-opts:
-    headers:
-      Host: fq.jp188.dpdns.org
-- name: VLESS - FreeProxyGo4
-  network: ws
-  port: 443
-  server: 104.17.63.170
-  servername: feixiang1981.ccwu.cc
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: false
-  uuid: 06fb2cc5-a777-4371-8a1d-c10205b4c85e
-  ws-opts:
-    headers:
-      Host: feixiang1981.ccwu.cc
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
 proxy-groups:
 - name: FREE-PROXY
   proxies:
@@ -153,30 +159,30 @@ proxy-groups:
   - Github - Alvin9999-newpac/fanqiang
   - Github - junjun266/FreeProxyGo
   - SS - raw.githubusercontent.com
-  - end-gfw.com - raw.githubusercontent.com
   - SS - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com
+  - end-gfw.com - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
   - vmess-ws-ipv6 - fanqiang
   - VLESS - FreeProxyGo
   - VLESS - FreeProxyGo1
-  - VLESS - FreeProxyGo3
+  - 🇳🇱荷兰 - FreeProxyGo
   - VLESS - FreeProxyGo4
   type: select
 - interval: 300
   name: AUTO-SWITCH
   proxies:
   - SS - raw.githubusercontent.com
-  - end-gfw.com - raw.githubusercontent.com
   - SS - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com
+  - end-gfw.com - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
   - vmess-ws-ipv6 - fanqiang
   - VLESS - FreeProxyGo
   - VLESS - FreeProxyGo1
-  - VLESS - FreeProxyGo3
+  - 🇳🇱荷兰 - FreeProxyGo
   - VLESS - FreeProxyGo4
   tolerance: 50
   type: url-test
@@ -184,9 +190,9 @@ proxy-groups:
 - name: raw.githubusercontent.com
   proxies:
   - SS - raw.githubusercontent.com
-  - end-gfw.com - raw.githubusercontent.com
   - SS - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com
+  - end-gfw.com - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
   type: select
@@ -198,7 +204,7 @@ proxy-groups:
   proxies:
   - VLESS - FreeProxyGo
   - VLESS - FreeProxyGo1
-  - VLESS - FreeProxyGo3
+  - 🇳🇱荷兰 - FreeProxyGo
   - VLESS - FreeProxyGo4
   type: select
 rule-providers: {}
