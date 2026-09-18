@@ -21,13 +21,6 @@ proxies:
   skip-cert-verify: false
   type: trojan
   udp: false
-- cipher: chacha20-ietf-poly1305
-  name: SS - raw.githubusercontent.com
-  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
-  port: 6666
-  server: 43.203.241.196
-  type: ss
-  udp: true
 - alterId: 0
   cipher: auto
   name: end-gfw.com - raw.githubusercontent.com
@@ -44,13 +37,6 @@ proxies:
     headers:
       Host: end-gfw.com
     path: /
-- cipher: chacha20-ietf-poly1305
-  name: SS - raw.githubusercontent.com1
-  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
-  port: 6666
-  server: 54.199.8.75
-  type: ss
-  udp: true
 - name: Trojan - raw.githubusercontent.com1
   password: 0b4bee77-b37c-42ea-b01e-572aa3422195
   port: 6668
@@ -59,6 +45,20 @@ proxies:
   skip-cert-verify: false
   type: trojan
   udp: false
+- cipher: chacha20-ietf-poly1305
+  name: SS - raw.githubusercontent.com
+  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
+  port: 6666
+  server: 43.203.241.196
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: SS - raw.githubusercontent.com1
+  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
+  port: 6666
+  server: 54.199.8.75
+  type: ss
+  udp: true
 - alterId: 0
   cipher: auto
   name: end-gfw.com - raw.githubusercontent.com1
@@ -95,10 +95,10 @@ proxy-groups:
   - raw.githubusercontent.com
   - Github - Alvin9999-newpac/fanqiang
   - Trojan - raw.githubusercontent.com
-  - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
-  - SS - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com1
+  - SS - raw.githubusercontent.com
+  - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
   - vmess-ws-ipv6 - fanqiang
   type: select
@@ -106,10 +106,10 @@ proxy-groups:
   name: AUTO-SWITCH
   proxies:
   - Trojan - raw.githubusercontent.com
-  - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
-  - SS - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com1
+  - SS - raw.githubusercontent.com
+  - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
   - vmess-ws-ipv6 - fanqiang
   tolerance: 50
@@ -118,10 +118,10 @@ proxy-groups:
 - name: raw.githubusercontent.com
   proxies:
   - Trojan - raw.githubusercontent.com
-  - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
-  - SS - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com1
+  - SS - raw.githubusercontent.com
+  - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
   type: select
 - name: Github - Alvin9999-newpac/fanqiang
