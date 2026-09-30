@@ -39,11 +39,18 @@ proxies:
 - name: Trojan - raw.githubusercontent.com
   password: 0b4bee77-b37c-42ea-b01e-572aa3422195
   port: 6668
-  server: 54.199.8.75
+  server: 43.203.241.196
   servername: baidu.com#end-gfw.com
   skip-cert-verify: false
   type: trojan
   udp: false
+- cipher: chacha20-ietf-poly1305
+  name: SS - raw.githubusercontent.com1
+  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
+  port: 6666
+  server: 43.203.241.196
+  type: ss
+  udp: true
 - alterId: 0
   cipher: auto
   name: end-gfw.com - raw.githubusercontent.com1
@@ -63,18 +70,11 @@ proxies:
 - name: Trojan - raw.githubusercontent.com1
   password: 0b4bee77-b37c-42ea-b01e-572aa3422195
   port: 6668
-  server: 43.203.241.196
+  server: 54.199.8.75
   servername: baidu.com#end-gfw.com
   skip-cert-verify: false
   type: trojan
   udp: false
-- cipher: chacha20-ietf-poly1305
-  name: SS - raw.githubusercontent.com1
-  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
-  port: 6666
-  server: 43.203.241.196
-  type: ss
-  udp: true
 - alterId: 0
   cipher: auto
   name: vmess-ws-ipv6 - fanqiang
@@ -104,28 +104,6 @@ proxies:
   name: 🇷🇺俄罗斯 - FreeProxyGo1
   network: tcp
   port: 50011
-  server: 36.133.74.15
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 23b5790c-4e96-49fa-95fc-9079ce9cf43c
-- alterId: 0
-  cipher: auto
-  name: 🇷🇺俄罗斯 - FreeProxyGo2
-  network: tcp
-  port: 50011
-  server: 157.148.7.136
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: f114d414-1535-4321-856c-29979eeed799
-- alterId: 0
-  cipher: auto
-  name: 🇷🇺俄罗斯 - FreeProxyGo3
-  network: tcp
-  port: 50011
   server: 36.134.35.36
   skip-cert-verify: true
   tls: false
@@ -134,7 +112,7 @@ proxies:
   uuid: abcb006d-739f-4cec-b13f-12c10d334d92
 - alterId: 0
   cipher: auto
-  name: 🇷🇺俄罗斯 - FreeProxyGo4
+  name: 🇷🇺俄罗斯 - FreeProxyGo2
   network: tcp
   port: 50011
   server: 157.148.7.55
@@ -145,10 +123,32 @@ proxies:
   uuid: abcb006d-739f-4cec-b13f-12c10d334d92
 - alterId: 0
   cipher: auto
-  name: 🇷🇺俄罗斯 - FreeProxyGo5
+  name: 🇷🇺俄罗斯 - FreeProxyGo3
   network: tcp
   port: 50011
   server: 36.134.35.36
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: f114d414-1535-4321-856c-29979eeed799
+- alterId: 0
+  cipher: auto
+  name: 🇷🇺俄罗斯 - FreeProxyGo4
+  network: tcp
+  port: 50011
+  server: 36.133.74.15
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 23b5790c-4e96-49fa-95fc-9079ce9cf43c
+- alterId: 0
+  cipher: auto
+  name: 🇷🇺俄罗斯 - FreeProxyGo5
+  network: tcp
+  port: 50011
+  server: 157.148.7.136
   skip-cert-verify: true
   tls: false
   type: vmess
@@ -164,9 +164,9 @@ proxy-groups:
   - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com
+  - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com1
-  - SS - raw.githubusercontent.com1
   - vmess-ws-ipv6 - fanqiang
   - 🇷🇺俄罗斯 - FreeProxyGo
   - 🇷🇺俄罗斯 - FreeProxyGo1
@@ -181,9 +181,9 @@ proxy-groups:
   - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com
+  - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com1
-  - SS - raw.githubusercontent.com1
   - vmess-ws-ipv6 - fanqiang
   - 🇷🇺俄罗斯 - FreeProxyGo
   - 🇷🇺俄罗斯 - FreeProxyGo1
@@ -199,9 +199,9 @@ proxy-groups:
   - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com
+  - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com1
-  - SS - raw.githubusercontent.com1
   type: select
 - name: Github - Alvin9999-newpac/fanqiang
   proxies:
