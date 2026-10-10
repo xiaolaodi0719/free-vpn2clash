@@ -13,13 +13,6 @@ mode: Rule
 name: free-VPN
 port: 7890
 proxies:
-- cipher: chacha20-ietf-poly1305
-  name: SS - raw.githubusercontent.com
-  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
-  port: 6666
-  server: 43.203.241.196
-  type: ss
-  udp: true
 - name: Trojan - raw.githubusercontent.com
   password: 0b4bee77-b37c-42ea-b01e-572aa3422195
   port: 6668
@@ -28,14 +21,13 @@ proxies:
   skip-cert-verify: false
   type: trojan
   udp: false
-- name: Trojan - raw.githubusercontent.com1
+- cipher: chacha20-ietf-poly1305
+  name: SS - raw.githubusercontent.com
   password: 0b4bee77-b37c-42ea-b01e-572aa3422195
-  port: 6668
+  port: 6666
   server: 43.203.241.196
-  servername: baidu.com#end-gfw.com
-  skip-cert-verify: false
-  type: trojan
-  udp: false
+  type: ss
+  udp: true
 - alterId: 0
   cipher: auto
   name: end-gfw.com - raw.githubusercontent.com
@@ -75,6 +67,14 @@ proxies:
     headers:
       Host: end-gfw.com
     path: /
+- name: Trojan - raw.githubusercontent.com1
+  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
+  port: 6668
+  server: 43.203.241.196
+  servername: baidu.com#end-gfw.com
+  skip-cert-verify: false
+  type: trojan
+  udp: false
 - alterId: 0
   cipher: auto
   name: vmess-ws-ipv6 - fanqiang
@@ -88,19 +88,8 @@ proxies:
   uuid: 3a966d20-7b9d-48cc-ba2c-8d38161b6d3a
   ws-opts:
     path: /github.com/Alvin9999-newpac/fanqiang
-- name: VLESS - FreeProxyGo
-  network: ws
-  port: 443
-  server: 209.206.51.240
-  servername: and-75r.pages.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: false
-  uuid: 573c6482-37db-454a-8c31-5b45a338a580
-  ws-opts: {}
 - client-fingerprint: randomized
-  name: VLESS - FreeProxyGo1
+  name: VLESS - FreeProxyGo
   network: tcp
   port: 443
   reality-opts:
@@ -113,6 +102,17 @@ proxies:
   type: vless
   udp: false
   uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
+- name: VLESS - FreeProxyGo1
+  network: ws
+  port: 443
+  server: 209.206.51.240
+  servername: and-75r.pages.dev
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: false
+  uuid: 573c6482-37db-454a-8c31-5b45a338a580
+  ws-opts: {}
 - name: VLESS - FreeProxyGo2
   network: ws
   port: 8880
@@ -126,7 +126,7 @@ proxies:
     headers:
       Host: vms.lifetime11.workers.dev
 - client-fingerprint: chrome
-  name: VLESS - FreeProxyGo3
+  name: VLESS - FreeProxyGo5
   network: tcp
   port: 443
   reality-opts:
@@ -146,43 +146,43 @@ proxy-groups:
   - raw.githubusercontent.com
   - Github - Alvin9999-newpac/fanqiang
   - Github - junjun266/FreeProxyGo
-  - SS - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com
-  - Trojan - raw.githubusercontent.com1
+  - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
   - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
+  - Trojan - raw.githubusercontent.com1
   - vmess-ws-ipv6 - fanqiang
   - VLESS - FreeProxyGo
   - VLESS - FreeProxyGo1
   - VLESS - FreeProxyGo2
-  - VLESS - FreeProxyGo3
+  - VLESS - FreeProxyGo5
   type: select
 - interval: 300
   name: AUTO-SWITCH
   proxies:
-  - SS - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com
-  - Trojan - raw.githubusercontent.com1
+  - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
   - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
+  - Trojan - raw.githubusercontent.com1
   - vmess-ws-ipv6 - fanqiang
   - VLESS - FreeProxyGo
   - VLESS - FreeProxyGo1
   - VLESS - FreeProxyGo2
-  - VLESS - FreeProxyGo3
+  - VLESS - FreeProxyGo5
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
 - name: raw.githubusercontent.com
   proxies:
-  - SS - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com
-  - Trojan - raw.githubusercontent.com1
+  - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
   - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
+  - Trojan - raw.githubusercontent.com1
   type: select
 - name: Github - Alvin9999-newpac/fanqiang
   proxies:
@@ -193,7 +193,7 @@ proxy-groups:
   - VLESS - FreeProxyGo
   - VLESS - FreeProxyGo1
   - VLESS - FreeProxyGo2
-  - VLESS - FreeProxyGo3
+  - VLESS - FreeProxyGo5
   type: select
 rule-providers: {}
 rules:
