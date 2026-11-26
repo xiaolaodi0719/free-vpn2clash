@@ -17,7 +17,7 @@ proxies:
   name: SS - raw.githubusercontent.com
   password: 0b4bee77-b37c-42ea-b01e-572aa3422195
   port: 6666
-  server: 43.203.241.196
+  server: 54.199.8.75
   type: ss
   udp: true
 - alterId: 0
@@ -44,13 +44,6 @@ proxies:
   skip-cert-verify: false
   type: trojan
   udp: false
-- cipher: chacha20-ietf-poly1305
-  name: SS - raw.githubusercontent.com1
-  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
-  port: 6666
-  server: 54.199.8.75
-  type: ss
-  udp: true
 - alterId: 0
   cipher: auto
   name: end-gfw.com - raw.githubusercontent.com1
@@ -67,6 +60,13 @@ proxies:
     headers:
       Host: end-gfw.com
     path: /
+- cipher: chacha20-ietf-poly1305
+  name: SS - raw.githubusercontent.com1
+  password: 0b4bee77-b37c-42ea-b01e-572aa3422195
+  port: 6666
+  server: 43.203.241.196
+  type: ss
+  udp: true
 - name: Trojan - raw.githubusercontent.com1
   password: 0b4bee77-b37c-42ea-b01e-572aa3422195
   port: 6668
@@ -80,6 +80,13 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   port: 19999
   server: 202.50.253.45
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: SS - FreeProxyGo1
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.72
   type: ss
   udp: true
 - client-fingerprint: chrome
@@ -96,6 +103,13 @@ proxies:
   type: vless
   udp: false
   uuid: a7595994-695d-484e-bfcb-e9fbb73cfa39
+- cipher: aes-256-gcm
+  name: SS - FreeProxyGo2
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.36
+  type: ss
+  udp: true
 - http-opts:
     method: GET
     path:
@@ -110,26 +124,6 @@ proxies:
   type: vless
   udp: false
   uuid: 7d1a74fd-8a38-4a29-863f-5da53a9e557e
-- name: VLESS - FreeProxyGo2
-  network: ws
-  port: 2053
-  server: 104.16.243.122
-  servername: j4mr-d9oj1at9i-8kuayba9kocwx7uzn.pages.dev
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: false
-  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
-  ws-opts:
-    headers:
-      Host: j4mr-d9oj1at9i-8kuayba9kocwx7uzn.pages.dev
-- cipher: aes-256-gcm
-  name: SS - FreeProxyGo1
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 202.50.253.36
-  type: ss
-  udp: true
 proxy-groups:
 - name: FREE-PROXY
   proxies:
@@ -139,14 +133,14 @@ proxy-groups:
   - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com
-  - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
+  - SS - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com1
   - SS - FreeProxyGo
-  - VLESS - FreeProxyGo
-  - VLESS - FreeProxyGo1
-  - VLESS - FreeProxyGo2
   - SS - FreeProxyGo1
+  - VLESS - FreeProxyGo
+  - SS - FreeProxyGo2
+  - VLESS - FreeProxyGo1
   type: select
 - interval: 300
   name: AUTO-SWITCH
@@ -154,14 +148,14 @@ proxy-groups:
   - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com
-  - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
+  - SS - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com1
   - SS - FreeProxyGo
-  - VLESS - FreeProxyGo
-  - VLESS - FreeProxyGo1
-  - VLESS - FreeProxyGo2
   - SS - FreeProxyGo1
+  - VLESS - FreeProxyGo
+  - SS - FreeProxyGo2
+  - VLESS - FreeProxyGo1
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -170,17 +164,17 @@ proxy-groups:
   - SS - raw.githubusercontent.com
   - end-gfw.com - raw.githubusercontent.com
   - Trojan - raw.githubusercontent.com
-  - SS - raw.githubusercontent.com1
   - end-gfw.com - raw.githubusercontent.com1
+  - SS - raw.githubusercontent.com1
   - Trojan - raw.githubusercontent.com1
   type: select
 - name: Github - junjun266/FreeProxyGo
   proxies:
   - SS - FreeProxyGo
-  - VLESS - FreeProxyGo
-  - VLESS - FreeProxyGo1
-  - VLESS - FreeProxyGo2
   - SS - FreeProxyGo1
+  - VLESS - FreeProxyGo
+  - SS - FreeProxyGo2
+  - VLESS - FreeProxyGo1
   type: select
 rule-providers: {}
 rules:
